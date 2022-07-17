@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="rus">
+     <head>
+          <meta charset="utf-8" />
+          <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="theme-color" content="#000000" />
+          <meta name="description" content="Web site created using create-react-app" />
+          <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+          <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+          <title>Promenade History</title>
+          <style>
+               * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+               }
+
+               .noscript {
+                    width: 100vw;
+                    height: 100vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: 600;
+                    font-size: 4vw;
+               }
+
+               @media (prefers-color-scheme: dark) {
+                    .noscript * {
+                         background-color: black;
+                         color: rgb(163, 163, 163);
+                    }
+               }
+
+               @media (prefers-color-scheme: light) {
+                    .noscript * {
+                         background-color: whitesmoke;
+                         color: black;
+                    }
+               }
+          </style>
+     </head>
+     <body>
+          <noscript class="noscript"
+               >Чтобы запустить это приложение, вы должны включить JavaScript в настройках браузера<br /><br />
+               (You need to enable JavaScript to run this app.)</noscript
+          >
+          <div id="root"></div>
+     </body>
+</html>
