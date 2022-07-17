@@ -33,7 +33,7 @@ const List = ({ varenik, loadVarenik, page }: ListPropsType) => {
           const data = await deleteVarenik(id);
 
           if (data.succes) {
-               showTopPopup({ message: { text: "Вареник успешно удалён", type: "info" } });
+               showTopPopup({ message: { text: "Девушка успешно удалена", type: "info" } });
           }
 
           loadVarenik(page);

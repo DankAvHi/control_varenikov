@@ -45,7 +45,7 @@ const ListPage = () => {
 
      return (
           <div className={styles.ListPage}>
-               <PageHeading text={"Список вареников"} />
+               <PageHeading text={"Список девушек"} />
                <FlatButton className={styles.toForm} mode="link" text="Перейти на страницу формы" href="/form" />
 
                <div className={styles.pagination}>

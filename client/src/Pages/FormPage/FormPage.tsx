@@ -375,7 +375,7 @@ const FormPage = () => {
                const dataImage = await sendVarenikImage(formData);
 
                if (dataImage.succes) {
-                    showTopPopup({ message: { text: "Вареник успешно отправлен в базу", type: "succes" } });
+                    showTopPopup({ message: { text: "Девушка успешно отправлен в базу", type: "succes" } });
                     navigate("/list");
                }
           }
@@ -383,8 +383,8 @@ const FormPage = () => {
 
      return (
           <div className={styles.FormPage}>
-               <PageHeading text="Добавить Вареник в базу" />
-               <FlatButton className={styles.toList} mode="link" text="Перейти к списку вареников" href="/list" />
+               <PageHeading text="Добавить Девушка в базу" />
+               <FlatButton className={styles.toList} mode="link" text="Перейти к списку девушек" href="/list" />
                <form className={styles.form} onSubmit={formOnSubmitHandler}>
                     <FlatInput
                          label="Имя"
