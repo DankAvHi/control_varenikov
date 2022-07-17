@@ -9,8 +9,8 @@
           "start-dev-windows": "SET NODE_ENV=development&& npx nodemon index.ts",
           "start-windows": "SET NODE_ENV=production&& npm run build-windows && node dist/index.js",
           "start": "NODE_ENV=production&& npm run build && node dist/index.js",
-          "build-server": "npx del-cli ./dist && webpack --mode production",
-          "build-server-windows": "npx del-cli ./dist && webpack --config webpack.config.windows.js --mode production",
+          "build-server": "npx del-cli ./dist && webpack --mode production && cd dist/public && mkdir images",
+          "build-server-windows": "npx del-cli ./dist && webpack --config webpack.config.windows.js --mode production && cd dist/public && mkdir images",
           "build-client": "cd client && npm run build && cd ../"
      },
      "author": "",

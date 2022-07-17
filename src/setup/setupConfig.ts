@@ -22,6 +22,10 @@ export const STATIC_PATH =
      NODE_ENV == "development" || process.argv[2] === "development"
           ? path.resolve("client", "build")
           : path.resolve("public");
+export const FRONTEND_PATH =
+     NODE_ENV == "development" || process.argv[2] === "development"
+          ? path.resolve("client", "build", "index.html")
+          : path.resolve("public", "index.html");
 
 export const HOME_PAGE_ROUTE = NODE_ENV == "development" || process.argv[2] === "development" ? URL : URL;
 

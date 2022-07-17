@@ -29,6 +29,7 @@ module.exports = {
                     { from: "prisma", to: "./" },
                     { from: ".env", to: "./" },
                     { from: "client/build/", to: "./public" },
+
                     { from: "node_modules/.prisma/client/query_engine-windows.dll.node", to: "./" },
                ],
           }),
