@@ -1,0 +1,10 @@
+{
+     "version": "2.0.0",
+     "tasks": [
+          {
+               "label": "set NODE_ENV",
+               "command": "SET NODE_ENV=development",
+               "type": "shell"
+          }
+     ]
+}

@@ -1,0 +1,61 @@
+.Loader {
+     z-index: 1;
+     position: fixed;
+     top: 0;
+     left: 0;
+     padding: 30px;
+     width: 100%;
+     height: 100%;
+     background: var(--app-background-color);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.loadingIcon {
+     width: 20%;
+     animation: spin 10s infinite;
+     animation-timing-function: linear;
+}
+.Loader_local {
+     position: absolute;
+     top: 50vh;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     padding: 0;
+     width: 400px;
+     height: 400px;
+     height: 10vh;
+}
+@media screen and (max-width: 700px) {
+     .Loader_local {
+          transform: translate(-50%, 0);
+     }
+}
+@media screen and (max-width: 450px) {
+     .Loader_local {
+          width: 100%;
+          height: 10vh;
+     }
+}
+
+.Loader_block {
+     position: relative;
+     padding: 10px;
+     width: 120px;
+     height: 120px;
+     top: 0;
+     left: 0;
+     transform: unset;
+}
+.Loader_block .loadingIcon {
+     width: 100%;
+}
+
+@keyframes spin {
+     0% {
+          transform: rotateZ(0deg);
+     }
+     100% {
+          transform: rotateZ(7200deg);
+     }
+}

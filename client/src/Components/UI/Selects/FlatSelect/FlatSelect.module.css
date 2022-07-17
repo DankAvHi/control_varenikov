@@ -1,0 +1,11 @@
+.container {
+     padding-bottom: 16px;
+     max-width: 334px;
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+}
+.hidden {
+     opacity: 0;
+}

@@ -1,0 +1,11 @@
+.PageHeading {
+     margin-bottom: 20px;
+
+     border-bottom: 2px solid var(--accient-red-color);
+     border-radius: var(--app-border-radius);
+
+     padding: 20px;
+
+     font-weight: 400;
+     font-size: 32px;
+}

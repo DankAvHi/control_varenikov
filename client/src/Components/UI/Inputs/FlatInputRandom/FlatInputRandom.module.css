@@ -1,0 +1,26 @@
+.flatInputRandomContainer {
+     max-width: 320px;
+
+     display: flex;
+     flex-direction: column;
+}
+
+.inputContainer {
+     display: flex;
+     align-items: center;
+}
+.FlatInputRandom {
+     border: 2px solid var(--accient-red-color);
+     border-radius: var(--app-border-radius);
+
+     width: 100%;
+
+     padding: 5px;
+}
+.label {
+     margin-bottom: 5px;
+}
+
+.randomButton {
+     margin-left: 5px;
+}

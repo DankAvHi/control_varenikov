@@ -1,0 +1,17 @@
+.ListPage {
+     min-height: 100vh;
+
+     background-color: var(--dark-blue-color);
+}
+
+.toForm {
+     margin: 15px;
+}
+.pagination {
+     display: flex;
+     align-items: center;
+     padding: 20px;
+}
+.prevButton {
+     margin-right: 15px;
+}

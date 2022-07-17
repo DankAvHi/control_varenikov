@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model user {
+  iduser   Int    @id @unique(map: "iduser_UNIQUE")
+  login    String @unique(map: "login_UNIQUE") @db.VarChar(45)
+  password String @db.VarChar(120)
+}
+
+model varenik {
+  idvarenik    Int     @id @unique(map: "idvarenik_UNIQUE") @default(autoincrement())
+  name         String  @db.Text
+  age          String  @db.VarChar(45)
+  height       String  @db.VarChar(45)
+  weight       String  @db.VarChar(45)
+  clothingSize String  @db.VarChar(45)
+  shoeSize     String  @db.VarChar(45)
+  hairColor    String  @db.VarChar(45)
+  race         String  @db.VarChar(45)
+  boobsSize    String  @db.VarChar(45)
+  photo        String? @db.Text
+  oneHourPrice String  @db.VarChar(45)
+  twoHourPrice String  @db.VarChar(45)
+  metro        String  @db.VarChar(45)
+}

@@ -1,0 +1,51 @@
+.List {
+     padding: 20px;
+
+     display: grid;
+
+     grid-template-columns: 33.33% 33.33% 33.33%;
+
+     justify-items: center;
+}
+@media screen and (max-width: 1024px) {
+     .List {
+          grid-template-columns: 50% 50%;
+     }
+}
+@media screen and (max-width: 680px) {
+     .List {
+          grid-template-columns: 100%;
+     }
+}
+.varenik {
+     margin-bottom: 15px;
+
+     border: 1px solid var(--accient-red-color);
+
+     padding: 15px;
+
+     max-width: 320px;
+     width: 100%;
+}
+.image {
+     max-width: 100%;
+     margin-bottom: 15px;
+}
+.position {
+     margin-bottom: 5px;
+}
+.name {
+     margin-right: 15px;
+     color: var(--orange-color);
+}
+.property {
+     word-break: break-all;
+}
+.actions {
+     margin-top: 10px;
+
+     width: 100%;
+
+     display: flex;
+     align-items: center;
+}

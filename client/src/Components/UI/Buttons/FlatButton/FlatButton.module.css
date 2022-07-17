@@ -1,0 +1,28 @@
+.FlatButton {
+     border-radius: var(--app-border-radius);
+
+     padding: 15px;
+
+     max-width: 320px;
+     width: 100%;
+
+     background-color: var(--accient-red-color);
+
+     display: block;
+
+     text-align: center;
+}
+
+@media screen and (max-width: 425px) {
+     .FlatButton {
+          max-width: 280px;
+     }
+}
+
+.icon {
+     max-width: 32px;
+}
+
+.max {
+     max-width: 100%;
+}

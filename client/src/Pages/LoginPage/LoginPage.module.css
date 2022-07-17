@@ -1,0 +1,26 @@
+.LoginPage {
+     min-height: 100%;
+}
+
+.form {
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+
+     border-radius: var(--app-border-radius);
+
+     padding: 30px;
+
+     max-width: 300px;
+     width: 100%;
+
+     background-color: var(--dark-blue-color);
+
+     display: flex;
+     flex-direction: column;
+}
+
+.input {
+     margin-bottom: 30px;
+}

@@ -1,0 +1,39 @@
+:root {
+     --breakpoint-small-mobile: 320px;
+     --breakpoint-mobile: 320px;
+     --breakpoint-large-mobile: 425px;
+     --breakpoint-tablet: 768px;
+     --breakpoint-laptop: 1024px;
+     --breakpoint-pc: 1440px;
+     --breakpoint-full-hd: 1920px;
+     --breakpoint-4k: 2560px;
+     --max-container-width: 1280px;
+     --max-screen-height: 1080px;
+
+     --white-color: white;
+     --dark-black-color: black;
+     --dark-blue-color: #101134;
+     --darkest-blue-color: #000320;
+     --accient-red-color: #e2005f;
+     --danger-color: rgb(255, 86, 86);
+     --orange-color: rgb(255, 136, 0);
+     --succes-color: rgb(75, 206, 156);
+     --info-color: rgb(64, 133, 212);
+
+     --app-default-transition: 0.1s;
+     --app-padding: 15px;
+     --app-border-radius: 15px;
+     --app-background-color: var(--darkest-blue-color);
+     --app-font-size: 16px;
+     --app-default-font-weight: 400;
+     --app-font-family: Montserrat;
+
+     --app-default-font-color: var(--white-color);
+     --app-dark-font-color: var(--dark-black-color);
+     --app-accient-font-color: var(--accient-red-color);
+     --navbar-background-color: var(--dark-blue-color);
+     --toppopup-warning-color: var(--orange-color);
+     --toppopup-error-color: var(--danger-color);
+
+     --element-margin: 15px;
+}

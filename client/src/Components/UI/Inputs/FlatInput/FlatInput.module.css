@@ -1,0 +1,18 @@
+.flatInputContainer {
+     max-width: 320px;
+
+     display: flex;
+     flex-direction: column;
+}
+
+.FlatInput {
+     border: 2px solid var(--accient-red-color);
+     border-radius: var(--app-border-radius);
+
+     width: 100%;
+
+     padding: 5px;
+}
+.label {
+     margin-bottom: 5px;
+}
