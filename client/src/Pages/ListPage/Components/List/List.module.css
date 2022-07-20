@@ -1,12 +1,28 @@
 .List {
+     transition: 0.5s;
+
      padding: 20px;
+
+     height: 100%;
 
      display: grid;
 
      grid-template-columns: 33.33% 33.33% 33.33%;
 
      justify-items: center;
+
+     animation: List 1s linear;
 }
+
+@keyframes List {
+     0% {
+          opacity: 0;
+     }
+     100% {
+          opacity: 1;
+     }
+}
+
 @media screen and (max-width: 1024px) {
      .List {
           grid-template-columns: 50% 50%;
@@ -26,10 +42,22 @@
 
      max-width: 320px;
      width: 100%;
+
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-end;
+     align-items: flex-start;
+}
+
+.imageContainer {
+     margin-bottom: 15px;
+
+     max-height: 320px;
+     height: 100%;
 }
 .image {
      max-width: 100%;
-     margin-bottom: 15px;
+     max-height: 320px;
 }
 .position {
      margin-bottom: 5px;

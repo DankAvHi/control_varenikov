@@ -10,6 +10,7 @@ const FlatButton = ({
      size = "default",
      mode = "button",
      href = "/",
+     disabled,
 }: ButtonPropsType) => {
      let sizeStyles = "";
 
@@ -17,11 +18,30 @@ const FlatButton = ({
           case "max":
                sizeStyles = sizeStyles + styles.max;
                break;
+          case "min":
+               sizeStyles = sizeStyles + styles.min;
+               break;
+
           default:
      }
+
+     const disabledClasses = disabled ? styles.disabled : null;
+
      if (mode === "link") {
+          if (disabled) {
+               return (
+                    <button
+                         disabled={true}
+                         className={`${styles.FlatButton}  ${sizeStyles} ${disabledClasses} ${className}`}
+                    >
+                         <span className={styles.text}>{text}</span>
+                         {icon ? <img className={styles.icon} src={icon} alt="" /> : null}
+                    </button>
+               );
+          }
+
           return (
-               <Link className={`${styles.FlatButton}  ${className} ${sizeStyles}`} to={href}>
+               <Link className={`${styles.FlatButton} ${sizeStyles} ${disabledClasses}  ${className}`} to={href}>
                     <span className={styles.text}>{text}</span>
                     {icon ? <img className={styles.icon} src={icon} alt="" /> : null}
                </Link>
@@ -29,7 +49,11 @@ const FlatButton = ({
      }
 
      return (
-          <button className={`${styles.FlatButton}  ${className} ${sizeStyles}`} onClick={onClick ? onClick : () => {}}>
+          <button
+               disabled={disabled}
+               className={`${styles.FlatButton} ${sizeStyles} ${disabledClasses}  ${className}`}
+               onClick={onClick ? onClick : () => {}}
+          >
                <span className={styles.text}>{text}</span>
                {icon ? <img className={styles.icon} src={icon} alt="" /> : null}
           </button>

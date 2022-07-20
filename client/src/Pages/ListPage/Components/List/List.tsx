@@ -44,21 +44,27 @@ const List = ({ varenik, loadVarenik, page }: ListPropsType) => {
                {varenik.map((varenik) => {
                     return (
                          <div id={varenik.idvarenik} className={styles.varenik} key={varenik.idvarenik}>
-                              <img className={styles.image} src={varenik.photo} alt="" />
-                              {Object.keys(varenik).map((key, index) => {
-                                   if (key === "photo" || key === "idvarenik") {
-                                        return null;
-                                   }
+                              <div className={styles.imageContainer}>
+                                   <img className={styles.image} src={varenik.photo} alt="" />
+                              </div>
 
-                                   const fieldName: string = fields[key];
+                              <div className={styles.positions}>
+                                   {Object.keys(varenik).map((key, index) => {
+                                        if (key === "photo" || key === "idvarenik") {
+                                             return null;
+                                        }
 
-                                   return (
-                                        <div key={index} className={styles.position}>
-                                             <span className={styles.name}>{fieldName}:</span>
-                                             <span className={styles.property}>{varenik[key]}</span>
-                                        </div>
-                                   );
-                              })}
+                                        const fieldName: string = fields[key];
+
+                                        return (
+                                             <div key={index} className={styles.position}>
+                                                  <span className={styles.name}>{fieldName}:</span>
+                                                  <span className={styles.property}>{varenik[key]}</span>
+                                             </div>
+                                        );
+                                   })}
+                              </div>
+
                               <div className={styles.actions}>
                                    <FlatButton
                                         onClick={() => deleteButtonOnClickHandler(varenik.idvarenik)}

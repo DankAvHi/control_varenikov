@@ -18,11 +18,17 @@
           max-width: 280px;
      }
 }
-
+.disabled {
+     background-color: gray;
+     cursor: not-allowed;
+}
 .icon {
      max-width: 32px;
 }
 
 .max {
      max-width: 100%;
+}
+.min {
+     max-width: min-content;
 }

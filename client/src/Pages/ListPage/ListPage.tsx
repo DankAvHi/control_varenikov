@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { api } from "../../Api/index.api";
 import Loader from "../../Components/Common/loader/Loader";
 import FlatButton from "../../Components/UI/Buttons/FlatButton/FlatButton";
@@ -8,9 +9,12 @@ import List from "./Components/List/List";
 import styles from "./ListPage.module.css";
 
 const ListPage = () => {
-     const { getVarenik } = api().useGetVarenikApi();
+     const { getVarenik, loading } = api().useGetVarenikApi();
+     const params = useParams();
 
-     const [page, setPage] = useState<number>(0);
+     const pageId = Number(params.id) - 1 || 0;
+
+     const [page, setPage] = useState<number>(pageId);
      const [maxPage, setMaxPage] = useState<number>(0);
      const [varenik, setVarenik] = useState<VarenikiType | null>(null);
 
@@ -30,18 +34,9 @@ const ListPage = () => {
      );
 
      useEffect(() => {
-          loadVarenik(0);
-     }, [loadVarenik]);
-
-     const prevButtonOnClickHandler = () => {
-          setPage((prev) => prev - 1);
-          loadVarenik(page - 1);
-     };
-
-     const nextButtonOnClickHandler = () => {
-          setPage((prev) => prev + 1);
-          loadVarenik(page + 1);
-     };
+          setPage(pageId);
+          loadVarenik(page);
+     }, [loadVarenik, page, pageId]);
 
      return (
           <div className={styles.ListPage}>
@@ -49,34 +44,50 @@ const ListPage = () => {
                <FlatButton className={styles.toForm} mode="link" text="Перейти на страницу формы" href="/form" />
 
                <div className={styles.pagination}>
-                    {page > 0 ? (
-                         <FlatButton
-                              className={styles.prevButton}
-                              onClick={prevButtonOnClickHandler}
-                              text="Предыдущая страница"
-                         />
-                    ) : null}
-                    {page + 1 < maxPage ? (
-                         <FlatButton onClick={nextButtonOnClickHandler} text="Следующая страница" />
-                    ) : null}
+                    <FlatButton
+                         href={`/list/${page}`}
+                         mode="link"
+                         className={styles.prevButton}
+                         disabled={!(page > 0)}
+                         text="Предыдущая страница"
+                         size="min"
+                    />
+
+                    <FlatButton
+                         disabled={!(page + 1 < maxPage)}
+                         href={`/list/${page + 2}`}
+                         mode="link"
+                         text="Следующая страница"
+                         size="min"
+                    />
                </div>
 
-               <div className={styles.list}>
-                    {varenik ? <List loadVarenik={loadVarenik} page={page} varenik={varenik} /> : <Loader />}
-               </div>
+               {!loading && varenik && varenik.length > 0 ? (
+                    <>
+                         <List loadVarenik={loadVarenik} page={page} varenik={varenik} />
 
-               <div className={styles.pagination}>
-                    {page > 0 ? (
-                         <FlatButton
-                              className={styles.prevButton}
-                              onClick={prevButtonOnClickHandler}
-                              text="Предыдущая страница"
-                         />
-                    ) : null}
-                    {page + 1 < maxPage ? (
-                         <FlatButton onClick={nextButtonOnClickHandler} text="Следующая страница" />
-                    ) : null}
-               </div>
+                         <div className={styles.pagination}>
+                              <FlatButton
+                                   href={`/list/${page}`}
+                                   mode="link"
+                                   className={styles.prevButton}
+                                   disabled={!(page > 0)}
+                                   text="Предыдущая страница"
+                                   size="min"
+                              />
+
+                              <FlatButton
+                                   disabled={!(page + 1 < maxPage)}
+                                   href={`/list/${page + 2}`}
+                                   mode="link"
+                                   text="Следующая страница"
+                                   size="min"
+                              />
+                         </div>
+                    </>
+               ) : (
+                    <Loader type="local" />
+               )}
           </div>
      );
 };

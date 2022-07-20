@@ -7,9 +7,9 @@ export const useRoutes = (isAuthenticated: boolean) => {
      if (isAuthenticated) {
           return (
                <Routes>
-                    <Route path="/list" element={<ListPage />} />
+                    <Route path="/list/:id" element={<ListPage />} />
                     <Route path="/form" element={<FormPage />} />
-                    <Route path="*" element={<Navigate replace to={"/list"} />} />
+                    <Route path="*" element={<Navigate replace to={"/list/1"} />} />
                </Routes>
           );
      }

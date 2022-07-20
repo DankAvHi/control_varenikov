@@ -3,16 +3,21 @@
      position: fixed;
      top: 0;
      left: 0;
+
      padding: 30px;
+
      width: 100%;
      height: 100%;
+
      background: var(--app-background-color);
+
      display: flex;
      justify-content: center;
      align-items: center;
 }
 .loadingIcon {
      width: 20%;
+
      animation: spin 10s infinite;
      animation-timing-function: linear;
 }
@@ -21,10 +26,13 @@
      top: 50vh;
      left: 50%;
      transform: translate(-50%, -50%);
+
      padding: 0;
+
      width: 400px;
-     height: 400px;
      height: 10vh;
+
+     background: transparent;
 }
 @media screen and (max-width: 700px) {
      .Loader_local {
@@ -40,12 +48,14 @@
 
 .Loader_block {
      position: relative;
-     padding: 10px;
-     width: 120px;
-     height: 120px;
      top: 0;
      left: 0;
      transform: unset;
+
+     padding: 10px;
+
+     width: 120px;
+     height: 120px;
 }
 .Loader_block .loadingIcon {
      width: 100%;

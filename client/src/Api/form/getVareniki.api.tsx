@@ -4,7 +4,7 @@ import { GetVarenikiRequestType, GET_VARENIK_API, VarenikiType } from "../../sha
 import { useHttp } from "../http.hook";
 
 export default function useGetVarenikApi() {
-     const { request, error, errorStatus, clientError, clearError } = useHttp();
+     const { request, loading, errorStatus, clientError, clearError } = useHttp();
      const { showTopPopup } = useTopPopup();
 
      useEffect(() => {
@@ -29,5 +29,5 @@ export default function useGetVarenikApi() {
           [request]
      );
 
-     return { getVarenik, error };
+     return { getVarenik, loading };
 }
