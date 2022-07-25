@@ -22,7 +22,7 @@ const LocalStrategy = () => {
                               return done(null, false, { message: "Login or password is incorrect" });
                          }
 
-                         const isMatch = password === password;
+                         const isMatch = password === user.password;
 
                          if (isMatch) {
                               return done(null, user);
