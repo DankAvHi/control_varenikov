@@ -27,6 +27,7 @@ const getVarenikController: RequestHandler = async (req, res) => {
           const vareniki = await prisma.varenik.findMany({
                skip: skip,
                take: count,
+               orderBy: [{ idvarenik: "desc" }],
           });
 
           res.json({ succes: true, vareniki, pages });
